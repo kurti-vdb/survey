@@ -1,0 +1,25 @@
+﻿@model checkboxtest.Models.Groep
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Groep</legend>
+
+    <div class="display-label">Titel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titel)
+    </div>
+
+    <div class="display-label">Enquete</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Enquete.Titel)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

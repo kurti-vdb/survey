@@ -1,0 +1,3 @@
+c:\users\kurt\documents\visual studio 2012\Projects\checkboxtest\checkboxtest\obj\Debug\12AG3IA_Kurt_Van_den_Branden_Code_First.csprojResolveAssemblyReference.cache
+c:\users\kurt\documents\visual studio 2012\Projects\checkboxtest\checkboxtest\obj\Debug\checkboxtest.dll
+c:\users\kurt\documents\visual studio 2012\Projects\checkboxtest\checkboxtest\obj\Debug\checkboxtest.pdb

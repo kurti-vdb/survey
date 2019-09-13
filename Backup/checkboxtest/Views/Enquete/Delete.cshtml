@@ -1,0 +1,58 @@
+﻿@model checkboxtest.Models.Enquete
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Enquete</legend>
+
+    <div class="display-label">Titel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titel)
+    </div>
+
+    <div class="display-label">Omschrijving</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Omschrijving)
+    </div>
+
+    <div class="display-label">Active</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Active)
+    </div>
+
+    <div class="display-label">StartDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+    <div class="display-label">EndDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+
+    <div class="display-label">Anoniem</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Anoniem)
+    </div>
+
+    <div class="display-label">slotTekst</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.slotTekst)
+    </div>
+
+    <div class="display-label">Owner</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner.Voornaam)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

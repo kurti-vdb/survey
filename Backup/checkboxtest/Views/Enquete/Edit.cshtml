@@ -1,0 +1,183 @@
+﻿@model checkboxtest.Models.Enquete
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.js")" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#groepenEditor").sortable();
+        $('#voegToe').live('click', function () {
+
+            $.get('/Enquete/GroepVeldToevoegen', function (template) {
+                $("#groepenEditor").append(template);
+            });
+        });
+    });
+        </script>
+
+<script>
+    $(function () {
+        $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+    });
+</script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Enquete</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Titel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Titel)
+            @Html.ValidationMessageFor(model => model.Titel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Omschrijving)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Omschrijving, new { rows = "7", cols = "50" })
+            @Html.ValidationMessageFor(model => model.Omschrijving)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+            @Html.ValidationMessageFor(model => model.Active)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.StartDate, new { @class = "datepicker" })
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EndDate, new { @class = "datepicker" })
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Anoniem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Anoniem)
+            @Html.ValidationMessageFor(model => model.Anoniem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.slotTekst)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.slotTekst, new { rows = "7", cols = "50" })
+            @Html.ValidationMessageFor(model => model.slotTekst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerID, "Owner")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerID", String.Empty)
+            @Html.ValidationMessageFor(model => model.OwnerID)
+        </div>
+
+       
+    </fieldset>
+    
+   
+     @* EnqueteUsers toevoegen/aanpassen *@
+    
+    <fieldset>
+            <legend>EnqueteUsers</legend>
+            <div class="editor-field">
+                <table>
+                    <tr>
+                        @{
+    int aantalKolommen = 0;
+    List<checkboxtest.ViewModels.AssignedGebruiker> users = new List<checkboxtest.ViewModels.AssignedGebruiker>();
+    users = ViewBag.Users;
+    if (users != null)
+    {
+        foreach (var gebruiker in users)
+        {
+            if (aantalKolommen++ % 5 == 0)
+            {
+                                @:  </tr> <tr> 
+                                }
+                                @: <td> 
+                                    <input type="checkbox" 
+                                           name="enqueteUsers" 
+                                           value="@gebruiker.ID" 
+                                           @(Html.Raw(gebruiker.Assigned ? "checked=\"checked\"" : "")) /> 
+                                           @gebruiker.Naam
+                                @:</td>
+                            }
+                            @: </tr>
+                        }
+                        }
+                   </table>
+            </div>
+        </fieldset>
+    
+        @* Enquete ADMINISTRATORS toevoegen/aanpassen *@
+    
+    <fieldset>
+            <legend>Enquete Administrators</legend>
+            <div class="editor-field">
+                <table>
+                    <tr>
+                        @{
+    
+    List<checkboxtest.ViewModels.EnqueteAdministrator> enqueteAdministrators = new List<checkboxtest.ViewModels.EnqueteAdministrator>();
+    enqueteAdministrators = ViewBag.EnqueteAdministrators;
+    if (enqueteAdministrators != null)
+    {
+        foreach (var gebruiker in users)
+        {
+            if (aantalKolommen++ % 5 == 0)
+            {
+                                @:  </tr> <tr> 
+                                }
+                                @: <td> 
+                                    <input type="checkbox" 
+                                           name="enqueteAdministrators" 
+                                           value="@gebruiker.ID" 
+                                           @(Html.Raw(gebruiker.Assigned ? "checked=\"checked\"" : "")) /> 
+                                           @gebruiker.Naam
+                                @:</td>
+                            }
+                            @: </tr>
+                        }
+                        }
+                   </table>
+            </div>
+        </fieldset>
+    <p>
+        <input type="submit" value="Save" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

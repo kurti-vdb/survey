@@ -1,0 +1,57 @@
+﻿@model IEnumerable<checkboxtest.Models.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Vraagstelling
+        </th>
+        <th>
+            Sequentie
+        </th>
+        <th>
+            QuestionType
+        </th>
+        <th>
+            Answer
+        </th>
+        <th>
+            Groep
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vraagstelling)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sequentie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuestionType.Omschrijving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Answer.AnswerValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Groep.Titel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

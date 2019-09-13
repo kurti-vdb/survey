@@ -1,0 +1,40 @@
+﻿@model checkboxtest.Models.Question
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Question</legend>
+
+    <div class="display-label">Vraagstelling</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vraagstelling)
+    </div>
+
+    <div class="display-label">Sequentie</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sequentie)
+    </div>
+
+    <div class="display-label">QuestionType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionType.Omschrijving)
+    </div>
+
+    <div class="display-label">Answer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer.AnswerValue)
+    </div>
+
+    <div class="display-label">Groep</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Groep.Titel)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,28 @@
+﻿@model checkboxtest.Models.Groep
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Groep</legend>
+
+    <div class="display-label">Titel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titel)
+    </div>
+
+    <div class="display-label">Enquete</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Enquete.Titel)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

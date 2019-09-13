@@ -1,0 +1,46 @@
+﻿@model checkboxtest.Models.Gebruiker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Gebruiker</legend>
+
+    <div class="display-label">Voornaam</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voornaam)
+    </div>
+
+    <div class="display-label">Achternaam</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Achternaam)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">TelNummer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelNummer)
+    </div>
+
+    <div class="display-label">GsmNummer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GsmNummer)
+    </div>
+
+    <div class="display-label">Paswoord</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Paswoord)
+    </div>
+</fieldset>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

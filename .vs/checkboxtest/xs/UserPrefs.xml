@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{49F92912-AE0C-4B16-97DB-3D5AF3668A7C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="checkboxtest/Controllers/EnqueteController.cs">
+    <Files>
+      <File FileName="checkboxtest/Models/Role.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/Models/AccountModels.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/Helpers/AllowAnonymousAttribute.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/Helpers/RoleHelper.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/Helpers/SecurityHelper.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/DAL/UnitOfWork.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/DAL/EnqueteInitializer.cs" Line="1" Column="1" />
+      <File FileName="checkboxtest/Controllers/EnqueteController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="checkboxtest" expanded="True">
+            <Node name="checkboxtest" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="EnqueteController.cs" selected="True" />
+              </Node>
+              <Node name="DAL" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.checkboxtest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

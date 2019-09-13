@@ -1,0 +1,48 @@
+﻿@model checkboxtest.Models.Gebruiker
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Gebruiker</legend>
+
+    <div class="display-label">Voornaam</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voornaam)
+    </div>
+
+    <div class="display-label">Achternaam</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Achternaam)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">TelNummer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelNummer)
+    </div>
+
+    <div class="display-label">GsmNummer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GsmNummer)
+    </div>
+
+    <div class="display-label">Paswoord</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Paswoord)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
